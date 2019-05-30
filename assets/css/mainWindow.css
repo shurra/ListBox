@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    min-width: 800px;
+    flex-direction: column;
+    margin: 0 10px;
+    /*background-color: darkslategrey;*/
+}
+
+header {
+    border: darkred;
+}
+
+nav {
+    padding: 0 10px;
+}
+
+nav h1 {
+    margin: 0;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+
