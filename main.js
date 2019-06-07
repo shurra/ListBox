@@ -1,6 +1,7 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow, dialog} = require('electron');
+const {app, BrowserWindow, ipcMain} = require('electron');
 const menu = require('./mainMenu');
+const prompt = require('electron-prompt');
 
 
 // console.log(dialog.showOpenDialog({ properties: ['openFile', 'openDirectory', 'multiSelections'] }))
@@ -16,7 +17,7 @@ let mainWindow;
 
 function createWindow () {
     // Save settings to file
-    for (var k in store.store) {
+    for (let k in store.store) {
         store.set(k, store.get(k));
     }
 
@@ -79,3 +80,24 @@ app.on('activate', function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+ipcMain.on('media-drop', (event, arg) => {
+    // event.reply('asynchronous-reply', 'pong')
+    mainWindow.webContents.send('media-add', arg);
+});
+
+ipcMain.on('edit-note', (event, arg) => {
+    prompt({
+        width: 370,
+        height: 200,
+        title: 'Notes dialog',
+        label: 'Note:',
+        value: '',
+        inputAttrs: {
+            type: 'text'
+        }
+    })
+        .then((note) => {
+            mainWindow.webContents.send('note-edited', {text: note, data: arg});
+        })
+        .catch(console.error);
+});

@@ -13,6 +13,12 @@ const schema = {
 		maximum: 1080,
 		default: 600
 	},
+	LastPlaylistPath: {
+		type: 'string'
+	},
+	LastMediaPath: {
+		type: 'string'
+	},
 };
 
 

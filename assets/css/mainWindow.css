@@ -23,4 +23,33 @@ main {
     flex: 1 0 auto;
 }
 
+th, td{
+    border: 1px solid gray;
+}
+#color {
+    background-color: darkorange;
+}
 
+.file {
+    background-color: #ff9f60;
+}
+
+.note {
+    background-color: #00ffff;
+}
+
+.selected {
+    color: white;
+    background-color: darkslategrey;
+}
+
+#total-length {
+    float: left;
+}
+
+#video {
+    float: right;
+}
+a {
+    color: white;
+}

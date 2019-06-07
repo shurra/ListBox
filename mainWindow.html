@@ -8,20 +8,33 @@
     <script type="text/javascript" src="assets/js/materialize.js"></script>
     <script type="text/javascript" src="assets/js/mainWindow.js"></script>
 </head>
-<body>
+<body id="app">
 <header>
     <nav class="blue-grey center-align">
         <h1>GalTV Playlist Editor</h1>
     </nav>
 </header>
 <main>
-    <h1>Hello World!</h1>
+<!--    <h1>Hello World!</h1>-->
 
 
 <!-- All of the Node.js APIs are available in this renderer process. -->
-We are using Node.js <script>document.write(process.versions.node)</script>,
-Chromium <script>document.write(process.versions.chrome)</script>,
-and Electron <script>document.write(process.versions.electron)</script>.
+<!--We are using Node.js <script>document.write(process.versions.node)</script>,-->
+<!--Chromium <script>document.write(process.versions.chrome)</script>,-->
+<!--and Electron <script>document.write(process.versions.electron)</script>.-->
+    <div id="playlist">
+        <table>
+            <thead>
+            <tr>
+                <th>#</th><th>Duration</th><th>Title</th><th>Location</th><th>Type</th>
+            </tr>
+            </thead>
+            <tbody id="file-list"></tbody>
+        </table>
+<!--        <ol id="file-list"></ol>-->
+
+    </div>
+
 
 </main>
 <!-- Modal Structure -->
@@ -34,11 +47,16 @@ and Electron <script>document.write(process.versions.electron)</script>.
         <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
     </div>
 </div>
-
+<div id="total-length"></div>
+<!--<div id="video">-->
+<!--    <video id="player" width="240" height="135" controls>-->
+<!--        &lt;!&ndash;            <source src="\\videoserver\Archive\Efir\2019-06\2019-06-03\PolitychniVisti-Shevchenko-2019-06-03.mpg" type="video/mp4">&ndash;&gt;-->
+<!--    </video>-->
+<!--</div>-->
 <footer class="page-footer blue-grey">
     <div class="footer-copyright">
         <div class="container">
-            © 2019 Roman Shkromyda
+            © 2019 Roman Shkromyda <a href = "mailto: shroman@ukr.net">shroman@ukr.net</a>
         </div>
     </div>
 </footer>
