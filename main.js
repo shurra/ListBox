@@ -91,13 +91,16 @@ ipcMain.on('edit-note', (event, arg) => {
         height: 200,
         title: 'Notes dialog',
         label: 'Note:',
-        value: '',
+        value: arg['#EVENT NOTE'],
         inputAttrs: {
             type: 'text'
         }
     })
         .then((note) => {
-            mainWindow.webContents.send('note-edited', {text: note, data: arg});
+            if(note === null) {
+            } else {
+                mainWindow.webContents.send('note-edited', {text: note, data: arg});
+            }
         })
         .catch(console.error);
 });

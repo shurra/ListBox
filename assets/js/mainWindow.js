@@ -213,6 +213,13 @@ function renderPlaylistHTML() {
             // }
         });
 
+        row.addEventListener('ondblclick', (e) => {
+            console.log("Double click: ", e.target.parentElement);
+            if (e.target.data['']) {
+
+            }
+        });
+
         table.appendChild(row);
         num++;
     }
@@ -355,7 +362,7 @@ function writePlaylistFile(filepath, content) {
     });
 }
 
-Mousetrap.bind('ctrl+return', function(e) {
+Mousetrap.bind('alt+return', function(e) {
     console.log("Keyboard event", e);
     const table = document.getElementById('file-list');
     const selected = table.getElementsByClassName('selected');
