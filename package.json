@@ -24,7 +24,7 @@
     "execa": "^1.0.0",
     "file-type": "^11.1.0",
     "iconv-lite": "^0.4.24",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "mousetrap": "^1.6.3",
     "read-chunk": "^3.2.0",
     "selectable.js": "^0.17.2",
