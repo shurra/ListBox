@@ -13,7 +13,7 @@
   "author": "Roman Shkromyda",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^5.0.2",
+    "electron": "^13.6.6",
     "electron-packager": "^13.1.1"
   },
   "dependencies": {
